@@ -1,0 +1,95 @@
+
+# Jarvis-Local configuration
+llm:
+  provider: "ollama"
+  # Pick a local model that you've pulled with `ollama pull ...`
+  model: "llama3:8b-instruct-q4_0"
+  temperature: 0.6
+  max_tokens: 512
+  endpoint: "http://localhost:11434"
+
+audio:
+  stt_model: "medium"   # faster-whisper sizes: tiny, base, small, medium, large-v3
+  sample_rate: 16000
+  mic_device: null      # null = default device
+
+tts:
+  voice: "default"      # pyttsx3 uses system voices; change in code if needed
+  rate: 180             # words per minute
+  volume: 0.9           # volume level (0.0 to 1.0)
+
+# Enhanced TTS settings
+enhanced_tts:
+  default_profile: "jarvis"
+  voice_profiles:
+    jarvis:
+      rate: 160
+      volume: 0.9
+      voice: "default"
+    friendly:
+      rate: 180
+      volume: 0.8
+      voice: "default"
+    news:
+      rate: 140
+      volume: 0.95
+      voice: "default"
+    whisper:
+      rate: 120
+      volume: 0.6
+      voice: "default"
+
+screen:
+  ocr_langs: ["en"]     # add "ja", "hi", etc. if needed
+  capture_region: null  # null = full screen; or [left, top, width, height]
+
+# Webcam settings
+webcam:
+  camera_index: 0       # 0 = default camera
+  resolution: [640, 480] # [width, height]
+  fps: 30
+  enable_face_detection: true
+  enable_object_detection: true
+  enable_scene_analysis: true
+
+controls:
+  confirm_actions: true # ask before typing/clicking
+  type_delay: 0.01      # seconds between keystrokes
+
+# Enhanced memory settings
+memory:
+  db_path: "./jarvis_memory"
+  collection_name: "jarvis_memories"
+  max_memories: 10000
+  max_buffer_size: 50
+  auto_cleanup_days: 30
+
+# Intent recognition settings
+intent_recognition:
+  confidence_threshold: 0.6
+  enable_validation: true
+  enable_suggestions: true
+
+app:
+  wake_words: ["jarvis", "assistant"]
+  use_voice_loop: false # set true to speak-to-talk loop; false = type in console
+  
+  # Enhanced features
+  enable_webcam: true
+  enable_enhanced_tts: true
+  enable_enhanced_memory: true
+  enable_enhanced_intents: true
+  
+  # Safety settings
+  require_confirmation_for:
+    - "system_control"
+    - "file_operation"
+    - "web_search"
+  
+  # Logging
+  log_level: "INFO"
+  log_file: "jarvis.log"
+  
+  # Performance
+  max_response_time: 10.0  # seconds
+  enable_caching: true

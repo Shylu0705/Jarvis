@@ -1,0 +1,101 @@
+
+# Core
+pyyaml
+requests
+
+# LLM client
+# We call local Ollama via HTTP – no extra package required
+
+# Audio & Speech
+sounddevice
+faster-whisper==1.0.3
+numpy
+
+# TTS
+pyttsx3
+
+# Vision & Screen
+mss
+easyocr
+Pillow
+opencv-python
+
+# Control
+pyautogui
+
+# Utilities
+pynput
+
+# Ollama
+ollama
+
+# Enhanced Features - New Dependencies
+
+# Computer Vision & Webcam
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0
+
+# Machine Learning for Object Detection
+scikit-learn>=1.3.0
+
+# Long-term Memory with Vector Database
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# Enhanced Audio Processing
+librosa>=0.10.0
+
+# System Information & Monitoring
+psutil>=5.9.0
+
+# Advanced Text Processing
+nltk>=3.8.0
+spacy>=3.6.0
+
+# Web Scraping & API Integration
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# Data Analysis & Visualization
+pandas>=2.0.0
+matplotlib>=3.7.0
+
+# GUI Framework (Optional)
+tkinter  # Usually comes with Python
+# PySide6>=6.5.0  # Uncomment for advanced GUI
+
+# Development & Testing
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+
+# Logging & Monitoring
+colorlog>=6.7.0
+
+# Configuration Management
+python-dotenv>=1.0.0
+
+# Async Support
+asyncio  # Built-in with Python 3.7+
+aiohttp>=3.8.0
+
+# File Processing
+python-magic>=0.4.27
+python-magic-bin>=0.4.14; sys_platform == 'win32'
+
+# Image Processing
+Pillow>=10.0.0
+imageio>=2.31.0
+
+# Audio Processing
+pydub>=0.25.0
+webrtcvad>=2.0.10
+
+# System Integration
+pywin32>=306; sys_platform == 'win32'
+pynput>=1.7.0
+
+# Optional: GPU Acceleration
+# torch>=2.0.0  # Uncomment for PyTorch support
+# torchvision>=0.15.0  # Uncomment for computer vision
+# torchaudio>=2.0.0  # Uncomment for audio processing
